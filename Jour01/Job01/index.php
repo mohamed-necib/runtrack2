@@ -1,4 +1,5 @@
 <?php
+
   // Concaténation de Variables
   $str = "LaPlateforme"; /* String */
   $str2 = "Vive"; /* String */
