@@ -13,6 +13,6 @@ for($i=0; isset($str[$i]); $i++){
      $nb++;
 };
  
-echo "\n $nb";
+echo "Le nombre de caractères présent dans la phrase est: $nb";
 
 ?>
