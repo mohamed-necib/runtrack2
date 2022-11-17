@@ -20,6 +20,9 @@ Vous pouvez ensuite afficher avec echo directement dans votre tableau : -->
 
 
 <?php
+
+//
+
 if($_GET){
   echo "
   <style type='text/css'>
