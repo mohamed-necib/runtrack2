@@ -18,8 +18,6 @@ $dic = [
 
 $countVoy = 0;
 $countCons = 0;
-
-
      
        for($i = 0; isset($str[$i]); $i++){
               foreach($dic['voyelles'] as $voyelle){
@@ -45,7 +43,7 @@ $countCons = 0;
 .tftable tr:hover {background-color:#ffffff;}
 </style>
 
-<table class="tftable" border="1">
+<table class="tftable" border="2">
 <tr><th>Consonnes</th><th>Voyelles</th></tr>
 <td><?php echo $countCons?></td>
 <td><?php echo $countVoy?></td>
