@@ -7,18 +7,8 @@ maison qui s’affiche sur la page doit ressembler à ceci :
 Si on entre les valeurs largeur = 20 et hauteur = 10 dans les champs,
 la maison qui s’affiche sur la page doit ressembler à ceci : -->
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
 
-
-<!-- Formulaire -->
+<!-- FORMULAIRE -->
 
 <form action="index.php" method="get" name="formulaire">
 
@@ -28,8 +18,7 @@ la maison qui s’affiche sur la page doit ressembler à ceci : -->
 <input type="submit" value="Envoyer">
 
 </form>
-</body>
-</html>
+
 
 
 
@@ -40,9 +29,9 @@ la maison qui s’affiche sur la page doit ressembler à ceci : -->
 
 if ($_GET){
   //Boucle permettant l'affichage du toit
-    for($i=0; $i <= $_GET["hauteur"]; $i++){
+    for($i=0; $i <= ($_GET["largeur"]/2); $i++){
         // Boucle permettant l'espacement entres les "/"
-        for ($s = 0; $s <= ($_GET["hauteur"] - $i-1); $s++){
+        for ($s = 0; $s <= (($_GET["largeur"]/2) - $i-1); $s++){
             echo "&nbsp;";
         }
         echo "/";
@@ -56,7 +45,7 @@ if ($_GET){
   }
 
   // Boucle permettant l'affichage du bas de la maison
-  for($i=1; $i <= $_GET["hauteur"]; $i++){
+  for($i=1; $i <= ($_GET["hauteur"]); $i++){
     echo "|";
     if ($i == $_GET["hauteur"]){
         // Boucle pour le sol de la maison
@@ -73,6 +62,7 @@ if ($_GET){
 
     echo "|<br/>";
 }
+
 
 ?>
 </pre>
