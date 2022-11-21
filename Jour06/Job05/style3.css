@@ -15,7 +15,6 @@ body {
   width: 100%;
 }
 
-
 .container {
   position: absolute;
   display: flex;
@@ -47,12 +46,12 @@ body {
   align-items: center;
   text-align: center;
   background: #fff;
-  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
 }
 
 .left {
   height: 100%;
-  background: url(./img/coucou.jpg);
+  background: url(./img/candy.jpg);
   background-size: cover;
 }
 
@@ -75,7 +74,7 @@ h2::after {
   height: 4px;
   width: 50px;
   border-radius: 2px;
-  background-color: #757FB4;
+  background-color: #757fb4;
 }
 
 #select-style {
@@ -98,25 +97,24 @@ input[type="submit"] {
   width: 100%;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
-  background-color: #E9ADB3;
+  background-color: #e9adb3;
   cursor: pointer;
   color: bisque;
   border-radius: 20px;
   outline: none;
   border: none;
-  transition: .3s;
+  transition: 0.3s;
 }
 
-input[type="submit"]:hover{
-  background-color: #957FAE;
+input[type="submit"]:hover {
+  background-color: #957fae;
 }
 
-@media screen and (max-width:880px) {
-  .box{
+@media screen and (max-width: 880px) {
+  .box {
     grid-template-columns: 1fr;
   }
-  .left{
+  .left {
     height: 200px;
   }
-  
 }
