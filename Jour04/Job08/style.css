@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 60vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+/* Formulaire */
+
+.form {
+  width: 50%;
+  position: relative;
+  height: 50px;
+}
+
+.form input {
+  width: 100%;
+  height: 100%;
+  color: #414f72;
+  padding-top: 20px;
+  border: none;
+  outline: none;
+}
+
+.form label .label-largeur {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid black;
+}
+
+.form label .label-hauteur {
+  position: absolute;
+  bottom: -45px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid black;
+}
+
+.form .label-largeur:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: -1px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid #5fa8d3;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.form .label-hauteur:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 45px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid #5fa8d3;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.content-largeur {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: all 0.3s ease;
+}
+
+.content-hauteur {
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+  transition: all 0.3s ease;
+}
+
+.form input:focus + .label-largeur .content-largeur,
+.form input:valid + .label-largeur .content-largeur {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: #5fa8d3;
+}
+
+.form input:focus + .label-hauteur .content-hauteur,
+.form input:valid + .label-hauteur .content-hauteur {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: #5fa8d3;
+}
+
+.form input:focus + .label-largeur::after,
+.form input:valid + .label-largeur::after {
+  transform: translateX(0%);
+}
+
+.form input:focus + .label-hauteur::after,
+.form input:valid + .label-hauteur::after {
+  transform: translateX(0%);
+}

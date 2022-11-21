@@ -49,13 +49,13 @@ if ($_GET){
     echo "|";
     if ($i == $_GET["hauteur"]){
         // Boucle pour le sol de la maison
-        for ($j=1; $j <= ($_GET["largeur"]); $j++){
+        for ($j=0; $j <= ($_GET["largeur"]-1); $j++){
             echo "_";
         }
     }
     else{
         // Boucle d'espacement des murs
-        for ($j=1; $j <= ($_GET["largeur"]); $j++){
+        for ($j=0; $j <= ($_GET["largeur"]-1); $j++){
             echo "&nbsp;";
         }
     }
