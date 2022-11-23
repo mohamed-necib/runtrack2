@@ -23,9 +23,9 @@ doit changer. -->
             <h2>Formulaire</h2>
             <select name="style" id="select-style">
               <option selected value="">Choisissez un style :</option>
-              <option <?php echo ($_POST["style"] == "style1") ? "selected" : NULL; ?> value="style1">Style 1</option>
-              <option <?php echo ($_POST["style"] == "style2") ? "selected" : NULL; ?> value="style2">Style 2</option>
-              <option <?php echo ($_POST["style"] == "style3") ? "selected" : NULL; ?> value="style3">Style 3</option>
+              <option <?php if (isset($_POST["style"])) echo ($_POST["style"] == "style1") ? "selected" : NULL; ?> value="style1">Style 1</option>
+              <option <?php if (isset($_POST["style"])) echo ($_POST["style"] == "style2") ? "selected" : NULL; ?> value="style2">Style 2</option>
+              <option <?php if (isset($_POST["style"])) echo ($_POST["style"] == "style3") ? "selected" : NULL; ?> value="style3">Style 3</option>
             </select>
             <input type="submit" value="Envoyer">
             <p></p>
@@ -41,8 +41,8 @@ doit changer. -->
 
 
 <?php
-//echo $_POST["style"];
-$style=$_POST["style"];
+// echo isset($_POST["style"]);
+$style= isset($_POST["style"]);
 
 echo"<br>";
 
