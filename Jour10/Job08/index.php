@@ -1,18 +1,20 @@
 <!-- En utilisant php, connectez-vous à la base de données “jour09”. A l’aide d’une requête
-SQL, récupérez la superficie totale des étages dans une colonne nommée
-“superficie_totale”. Affichez le résultat de cette requête dans un tableau html. La
-première ligne de votre tableau html doit contenir le nom des champs. Les suivantes
-doivent contenir les données présentes dans votre base de données. -->
+SQL, sélectionnez dans une colonne nommée “capacite_totale” la somme des capacités
+des salles. Affichez le résultat de cette requête dans un tableau html. La première ligne
+de votre tableau html doit contenir le nom des champs. Les suivantes doivent contenir
+les données présentes dans votre base de données. -->
+
 
 <?php
 
 $mysqli = new mysqli("localhost", "root", "root", "jour09");
 
-$request = $mysqli->query("SELECT SUM(superficie) FROM etages");
+$request = $mysqli->query("SELECT SUM(capacite) FROM salles");
 
 $result_fetch_all = $request->fetch_all();
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -21,7 +23,7 @@ $result_fetch_all = $request->fetch_all();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job07</title>
+  <title>Job08</title>
 </head>
 
 <body>
@@ -65,7 +67,7 @@ $result_fetch_all = $request->fetch_all();
 
   <table class="tftable" border="1">
     <tr>
-      <th>Superficie totale</th>
+      <th>Capacité totale</th>
     </tr>
     <?php
     foreach ($result_fetch_all as $ligne) {
