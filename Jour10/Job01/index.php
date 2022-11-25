@@ -20,7 +20,7 @@ $result_fetch_all = $request->fetch_all();
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
