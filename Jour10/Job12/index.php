@@ -8,9 +8,10 @@ doivent contenir les données présentes dans votre base de données. -->
 
 $mysqli = new mysqli("localhost", "root", "root", "jour09");
 
-$request = $mysqli->query("SELECT prenom, nom, naissance FROM `etudiants` BETWEEN '1998-01-01' AND '2018-12-31'");
+$request = $mysqli->query ("SELECT prenom, nom, naissance FROM etudiants WHERE naissance BETWEEN '1998-01-01' AND '2018-12-31'");
 
 $result_fetch_all = $request->fetch_all();
+
 
 ?>
 
@@ -73,14 +74,15 @@ $result_fetch_all = $request->fetch_all();
       background-color: #ffffff;
     }
   </style>
-  <table class="tftable" border="1">
+  <!-- <table class="tftable" border="1">
     <tr>
-      <th class="titre">Capacités des salles par ordre croissant</th>
-    </tr>
+      <th class="titre"></th>
+    </tr> -->
     <table class="tftable" border="1">
       <tr>
+        <th>Prenom</th>
         <th>Nom</th>
-        <th>Capacité</th>
+        <th>Date de Naissance</th>
       </tr>
       <?php
       foreach ($result_fetch_all as $ligne) {
