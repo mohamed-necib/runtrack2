@@ -1,21 +1,20 @@
 <!-- En utilisant php, connectez-vous à la base de données “jour09”. A l’aide d’une requête
-SQL, récupérez l’ensemble des informations des étudiants dont prenom commence par
-un “T”. Affichez le résultat de cette requête dans un tableau html. La première ligne de
-votre tableau html doit contenir le nom des champs. Les suivantes doivent contenir les
+SQL, récupérez l’ensemble des informations des étudiants qui ont moins de 18 ans.
+Affichez le résultat de cette requête dans un tableau html. La première ligne de votre
+tableau html doit contenir le nom des champs. Les suivantes doivent contenir les
 données présentes dans votre base de données. -->
 
 <?php
 
 $mysqli = new mysqli("localhost", "root", "root", "jour09");
 
-$request = $mysqli->query("SELECT prenom, nom, naissance, sexe, email FROM `etudiants` WHERE prenom LIKE 't%'");
+$request = $mysqli->query("SELECT * FROM `etudiants` WHERE naissance > '2004-01-01'");
 
 $result_fetch_all = $request->fetch_all();
 
-// var_dump($result_fetch_all) 
+// var_dump($result_fetch_all)
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -24,7 +23,7 @@ $result_fetch_all = $request->fetch_all();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job04</title>
+  <title>Job05</title>
 </head>
 
 <body>
@@ -68,6 +67,7 @@ $result_fetch_all = $request->fetch_all();
 
   <table class="tftable" border="1">
     <tr>
+      <th>ID</th>
       <th>Prenom</th>
       <th>Nom</th>
       <th>Date de Naissance</th>
