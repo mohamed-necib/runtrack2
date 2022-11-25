@@ -6,4 +6,4 @@
 -- nom de l'etage avec la plus grande capacité + le nom de la salle et sa capacite
 -- puis renommé la colonne nom par Biggest Room
 
-SELECT nom FROM 'etages' 
+SELECT salles.nom AS Biggest_Room, salles.capacite, etages.nom FROM salles JOIN `etages` ON salles.id_etage = etages.id ORDER BY (salles.capacite) DESC LIMIT 1;
