@@ -1,23 +1,17 @@
-<!-- En utilisant php et mysqli, connectez-vous à la base de données “jour09”. A l’aide d’une
-requête SQL, récupérez l’ensemble des informations de la table etudiants. Affichez le
-résultat de cette requête dans un tableau html. La première ligne de votre tableau html
-(thead) doit contenir le nom des champs. Les suivantes (tbody) doivent contenir les
-données présentes dans votre base de données. -->
+<!-- En utilisant php, connectez-vous à la base de données “jour09”. A l’aide d’une requête
+SQL, récupérez le nombre total d’étudiants dans une colonne nommée “nb_etudiants”.
+Affichez le résultat de cette requête dans un tableau html. La première ligne de votre
+tableau html doit contenir le nom du champ. -->
 
 <?php
 
 $mysqli = new mysqli("localhost", "root", "root", "jour09");
 
-$request = $mysqli->query("SELECT prenom, nom, naissance, sexe, email FROM etudiants");
+$request = $mysqli->query("SELECT COUNT(nom) FROM etudiants");
 
 $result_fetch_all = $request->fetch_all();
 
-
-//var_dump($result_fetch_all);
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -26,7 +20,7 @@ $result_fetch_all = $request->fetch_all();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tableau</title>
+  <title>Job05</title>
 </head>
 
 <body>
@@ -34,7 +28,7 @@ $result_fetch_all = $request->fetch_all();
     .tftable {
       font-size: 12px;
       color: #333333;
-      width: 100%;
+      width: 50%;
       border-width: 1px;
       border-color: #ebab3a;
       border-collapse: collapse;
@@ -47,7 +41,7 @@ $result_fetch_all = $request->fetch_all();
       padding: 8px;
       border-style: solid;
       border-color: #ebab3a;
-      text-align: left;
+      text-align: center;
     }
 
     .tftable tr {
@@ -60,6 +54,7 @@ $result_fetch_all = $request->fetch_all();
       padding: 8px;
       border-style: solid;
       border-color: #ebab3a;
+      text-align: center;
     }
 
     .tftable tr:hover {
@@ -69,11 +64,7 @@ $result_fetch_all = $request->fetch_all();
 
   <table class="tftable" border="1">
     <tr>
-      <th>Prenom</th>
-      <th>Nom</th>
-      <th>Date de Naissance</th>
-      <th>Sexe</th>
-      <th>Email</th>
+      <th>Nombres d'étudiants</th>
     </tr>
     <?php
     foreach ($result_fetch_all as $ligne) {
@@ -87,8 +78,6 @@ $result_fetch_all = $request->fetch_all();
 
 
   </table>
-
-
 
 </body>
 
