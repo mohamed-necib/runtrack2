@@ -8,7 +8,7 @@ données présentes dans votre base de données. -->
 
 $mysqli = new mysqli("localhost", "root", "root", "jour09");
 
-$request = $mysqli->query("SELECT * FROM `etudiants` WHERE naissance > '2004-01-01'");
+$request = $mysqli->query("SELECT prenom, nom, naissance, sexe, email FROM `etudiants` WHERE naissance > '2004-01-01'");
 
 $result_fetch_all = $request->fetch_all();
 
@@ -67,7 +67,6 @@ $result_fetch_all = $request->fetch_all();
 
   <table class="tftable" border="1">
     <tr>
-      <th>ID</th>
       <th>Prenom</th>
       <th>Nom</th>
       <th>Date de Naissance</th>
